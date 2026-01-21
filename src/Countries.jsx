@@ -28,7 +28,7 @@ export default function Countries(){
             <input type="text" value={search} placeholder="search for countries" onChange={(e)=> setSearch(e.target.value)} />
             <div className="flag">
             {countryFlag.filter((item)=> item.common.toLowerCase().includes(search.toLocaleLowerCase())).map((item)=>(
-                <div>
+                <div key={item.common}>
                     <Cart image={item.png} name={item.common} />
                 </div>
             ))}
